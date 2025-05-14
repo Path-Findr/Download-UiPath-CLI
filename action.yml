@@ -1,0 +1,26 @@
+name: Download UiPath CLI
+description: 'Setup step that downloads the UiPath CLI into the current workspace'
+
+inputs:
+  version:
+    required: false
+    description: The version of the UiPath CLI that you want to download
+    default: '25.4.9239.19674'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Downalod UiPath CLI
+      shell: bash
+      run: |
+        env=UiPath.CLI
+
+        case "$OSTYPE" in
+          msys*)    env=UiPath.CLI.Windows ;;
+          cygwin*)  env=UiPath.CLI.Windows ;;
+          *)        env=UiPath.CLI ;;
+        esac
+
+        curl "https://pkgs.dev.azure.com/uipath/Public.Feeds/_apis/packaging/feeds/UiPath-Official/nuget/packages/$env/versions/${{ inputs.version }}/content" -L -o uipcli.zip
+        mkdir uipcli
+        unzip -o "uipcli" -d uipcli
