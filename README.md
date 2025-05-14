@@ -34,7 +34,7 @@ jobs:
 
 | Name     | Description                                   | Required | Default |
 |----------|-----------------------------------------------|----------|---------|
-| `version` | The version of the UiPath CLI to download.    | ✅ Yes   | N/A     |
+| `version` | The version of the UiPath CLI to download.    | ✅ No   | 25.4.9239.19674     |
 
 **Note:** Available versions can be found at the [UiPath Artifact Feed](https://uipath.visualstudio.com/Public.Feeds/_artifacts/feed/UiPath-Official) by filtering on **UiPath.CLI**.
 
