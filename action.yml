@@ -1,6 +1,10 @@
 name: Download UiPath CLI
 description: 'Setup step that downloads the UiPath CLI into the current workspace'
 
+branding:
+  icon: chevrons-right
+  color: orange
+  
 inputs:
   version:
     required: false
