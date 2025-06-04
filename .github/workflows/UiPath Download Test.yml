@@ -14,4 +14,6 @@ jobs:
                 version: 25.4.9239.19674
 
             - name: 'Run basic command'
-              run: ./uipcli/tools/uipcli.exe
+              run: |
+               chmod u+x ./uipcli/tools/uipcli.exe
+               ./uipcli/tools/uipcli.exe
