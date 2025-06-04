@@ -14,6 +14,4 @@ jobs:
                 version: 25.4.9239.19674
 
             - name: 'Run basic command'
-              run: |
-               chmod u+x ./uipcli/tools/uipcli.exe
-               ./uipcli/tools/uipcli.exe
+              run: dotnet uipcli/tools/uipcli.dll
